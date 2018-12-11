@@ -3,6 +3,18 @@
 WebDav proxy to Mail.ru Cloud  
 Author [yar229](https://github.com/yar229) ([GitHub](https://github.com/yar229/WebDavMailRuCloud))
 
+Dockerfile by [slothds](https://github.com/slothds) ([GitHub](https://github.com/slothds/wdmrc-proxy))
+
+## Building modified image
+
+```
+    docker build -t ivandeex/wdmrc-proxy:debian -f Dockerfile.debian .
+```
+
+Building alpine image resulted in ``Error relocating /usr/bin/mono: getrandom: symbol not found``
+so I reverted to the debian base image.
+Also, updated WDMRC to the latest v1.10.1.15, as of December 2018.
+
 ## Предисловие
 
 ```text
