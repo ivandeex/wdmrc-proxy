@@ -8,7 +8,7 @@ Dockerfile by [slothds](https://github.com/slothds) ([GitHub](https://github.com
 ## Building modified image
 
 ```
-    docker build -t ivandeex/wdmrc-proxy:debian -f Dockerfile.debian .
+    ./build-ubuntu-images.sh
 ```
 
 Building alpine image resulted in ``Error relocating /usr/bin/mono: getrandom: symbol not found``

@@ -15,13 +15,13 @@ RUN     export DEBIAN_FRONTEND=noninteractive && \
         apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
                     --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
         apt-get -qy update && apt-get -qy upgrade && \
-        apt-get -qy install --no-install-recommends curl wget unzip supervisor && \
+        apt-get -qy install --no-install-recommends curl unzip supervisor && \
         apt-get -qy install --no-install-recommends mono-complete && \
         apt-get -qy autoremove && apt-get -qy autoclean && \
         apt-get -qy clean && apt-get -qy clean all && \
         rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-RUN     wget --no-check-certificate -nv -O /tmp/wdmrc-core.zip \
+RUN     curl -skLo /tmp/wdmrc-core.zip \
              ${WDMRC_REPO}/${WDMRC_VERS}/WebDAVCloudMailRu-${WDMRC_VERS}-dotNet45.zip && \
         mkdir -p ${WDMRC_HOME} && \
         useradd -d ${WDMRC_HOME} runner && \
@@ -29,7 +29,7 @@ RUN     wget --no-check-certificate -nv -O /tmp/wdmrc-core.zip \
         chown -R runner:runner ${WDMRC_HOME} && \
         rm -rf /tmp/*
 
-COPY    rootfs.debian /
+COPY    rootfs /
 
 EXPOSE  8010
 
