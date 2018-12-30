@@ -1,5 +1,5 @@
 #!/bin/bash
-WDMRC_VERS="1.10.1.16"
+WDMRC_VERS="1.10.2.2"
 
 for DIR in xenial-core xenial-mono bionic-core bionic-mono ; do
   perl -i -p -e "s/WDMRC_VERS=\"[0-9.]+\"/WDMRC_VERS=\"$WDMRC_VERS\"/g" $DIR/Dockerfile

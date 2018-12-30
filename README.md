@@ -13,7 +13,7 @@ Dockerfile by [slothds](https://github.com/slothds) ([GitHub](https://github.com
 
 Building alpine image resulted in ``Error relocating /usr/bin/mono: getrandom: symbol not found``
 so I reverted to the debian base image.
-Also, updated WDMRC to the latest v1.10.1.15, as of December 2018.
+Also, updated WDMRC to the latest v1.10.2.2, as of December 2018.
 
 ## Предисловие
 
@@ -49,7 +49,7 @@ Also, updated WDMRC to the latest v1.10.1.15, as of December 2018.
 ```text
 docker run -d --restart always \
            --name wdmrc-proxy \
-           -p 8010:8010 \
+           -p 8810:8810 \
            slothds/wdmrc-proxy:stable
 ```
 
@@ -60,4 +60,4 @@ docker run -d --restart always \
 Более детально с данным вопросом лучше ознакомиться в документации от автора:  
 [Чтиво](https://github.com/yar229/WebDavMailRuCloud/blob/master/readme.md) | [FAQ на русском](https://gist.github.com/yar229/4b702af114503546be1fe221bb098f27)  
   
-**WebDav URL** в клиенте указываете: `http://localhost:8010`
+**WebDav URL** в клиенте указываете: `http://localhost:8810`

@@ -5,7 +5,7 @@ LABEL   maintainer="SlothDS" \
         maintainer.mail="sloth@devils.su" \
         maintainer.git="https://github.com/slothds"
 
-ENV     WDMRC_VERS="1.10.1.15" \
+ENV     WDMRC_VERS="1.10.2.2" \
         WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download" \
         WDMRC_HOME="/opt/runner"
 
@@ -31,7 +31,7 @@ RUN     curl -skLo /tmp/wdmrc-core.zip \
 
 COPY    rootfs /
 
-EXPOSE  8010
+EXPOSE  8810
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 

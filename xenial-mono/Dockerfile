@@ -28,7 +28,7 @@ RUN     set -x && \
         apt-get -qy clean && apt-get -qy clean all && \
         rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ENV     WDMRC_VERS="1.10.1.16" \
+ENV     WDMRC_VERS="1.10.2.2" \
         WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download" \
         WDMRC_HOME="/opt/runner"
 
@@ -43,7 +43,7 @@ RUN     set -x && \
 
 COPY    rootfs /
 
-EXPOSE  8010
+EXPOSE  8810
 #USER    runner
 
 ENTRYPOINT [ "/entrypoint.sh" ]
