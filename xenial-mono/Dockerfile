@@ -24,17 +24,19 @@ RUN     set -x && \
                     libmono-system-windows-forms4.0-cil \
                     libmono-system-runtime-serialization4.0-cil \
                     mono-runtime && \
+        echo "installing large mono-devel because wdmrc 1.10.5+ requires netstandard.dll :(" && \
+        apt-get -qy install --no-install-recommends mono-devel && \
         apt-get -qy autoremove && apt-get -qy autoclean && \
         apt-get -qy clean && apt-get -qy clean all && \
         rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ENV     WDMRC_VERS="1.10.2.2" \
+ENV     WDMRC_VERS="1.10.7.10" \
         WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download" \
         WDMRC_HOME="/opt/runner"
 
 RUN     set -x && \
         curl -sLo /tmp/wdmrc.zip \
-             $WDMRC_REPO/$WDMRC_VERS/WebDAVCloudMailRu-$WDMRC_VERS-dotNet45.zip && \
+             $WDMRC_REPO/$WDMRC_VERS/WebDAVCloudMailRu-$WDMRC_VERS-dotNet461.zip && \
         mkdir -p $WDMRC_HOME && \
         useradd -d $WDMRC_HOME runner && \
         unzip /tmp/wdmrc.zip -d $WDMRC_HOME && \

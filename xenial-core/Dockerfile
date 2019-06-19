@@ -27,7 +27,7 @@ ENV     WDMRC_VERS="1.10.2.2" \
 
 RUN     set -x && \
         curl -sLo /tmp/wdmrc.zip \
-             $WDMRC_REPO/$WDMRC_VERS/WebDAVCloudMailRu-$WDMRC_VERS-dotNetCore20.zip && \
+             $WDMRC_REPO/$WDMRC_VERS/WebDAVCloudMailRu-$WDMRC_VERS-dotNetCore22.zip && \
         mkdir -p $WDMRC_HOME && \
         useradd -d $WDMRC_HOME runner && \
         unzip /tmp/wdmrc.zip -d $WDMRC_HOME && \
